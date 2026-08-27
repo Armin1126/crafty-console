@@ -1,6 +1,5 @@
 import { useSensorData } from "../../hooks/useSensorData.js";
 import { SCENARIOS } from "../../types/sensor.js";
-import { IS_MOCK_DATA } from "../../data/index.js";
 import { Sidebar } from "./Sidebar.jsx";
 import { TopBar } from "./TopBar.jsx";
 import { SystemStatus } from "./SystemStatus.jsx";
@@ -29,25 +28,23 @@ export function Dashboard() {
         <div className="mx-auto flex max-w-[1400px] flex-col gap-16 lg:gap-24">
           <TopBar deviceId={data?.deviceId ?? "UNIT-001"} secondsAgo={secondsAgo} />
 
-          {IS_MOCK_DATA && (
-            <div className="-mt-10 flex flex-wrap items-center gap-3 rounded-xl bg-chassis px-4 py-3 shadow-recessed lg:-mt-16">
-              <Stamp className="text-[0.55rem]">
-                Demo mode · simulated telemetry, no device connected
-              </Stamp>
-              <div className="flex flex-wrap gap-2">
-                {SCENARIOS.map((s) => (
-                  <KeyButton
-                    key={s}
-                    accent={s === scenario}
-                    active={s === scenario}
-                    onClick={() => setScenario(s)}
-                  >
-                    {LABELS[s]}
-                  </KeyButton>
-                ))}
-              </div>
+          <div className="-mt-10 flex flex-wrap items-center gap-3 rounded-xl bg-chassis px-4 py-3 shadow-recessed lg:-mt-16">
+            <Stamp className="text-[0.55rem]">
+              Intake Condition Profile
+            </Stamp>
+            <div className="flex flex-wrap gap-2">
+              {SCENARIOS.map((s) => (
+                <KeyButton
+                  key={s}
+                  accent={s === scenario}
+                  active={s === scenario}
+                  onClick={() => setScenario(s)}
+                >
+                  {LABELS[s]}
+                </KeyButton>
+              ))}
             </div>
-          )}
+          </div>
 
           {data ? (
             <>

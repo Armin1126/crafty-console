@@ -1,7 +1,7 @@
-# Smart Water Monitor — Portable Purification Unit Dashboard
+# W.I.S.E — WATER INTELLIGENCE & SURVEILLANCE ENGINE
 
-Frontend-only live monitoring console for a portable water purification and
-quality-monitoring unit (UNIT-001), styled as an industrial skeuomorphic control panel.
+Frontend live monitoring and surveillance console for a portable water purification and
+quality-monitoring unit (UNIT-001), styled as an industrial control panel.
 
 ## Run
 

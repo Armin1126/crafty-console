@@ -8,9 +8,9 @@ export function TopBar({ deviceId, secondsAgo }) {
         <IconHousing icon={Radio} />
         <div className="min-w-0">
           <h1 className="text-lg font-extrabold tracking-tight text-ink sm:text-xl">
-            Monitoring Dashboard
+            W.I.S.E Console
           </h1>
-          <Stamp className="block">{deviceId} · Portable Treatment Unit</Stamp>
+          <Stamp className="block">{deviceId} · Water Intelligence & Surveillance Engine</Stamp>
         </div>
       </div>
       <div className="flex shrink-0 flex-col items-end gap-2">
