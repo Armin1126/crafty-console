@@ -1,24 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
+// @ts-expect-error - JavaScript component (project is authored in JS)
+import { Dashboard } from "../components/dashboard/Dashboard.jsx";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Smart Water Monitor — UNIT-001 Live Dashboard" },
+      {
+        name: "description",
+        content:
+          "Live monitoring console for a portable water purification unit: pH, TDS, turbidity, flow, treatment pipeline and solar energy telemetry.",
+      },
+      { property: "og:title", content: "Smart Water Monitor — UNIT-001 Live Dashboard" },
+      {
+        property: "og:description",
+        content:
+          "Industrial control-panel dashboard tracking water quality, treatment cycles and energy for a portable purification unit.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Dashboard,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
