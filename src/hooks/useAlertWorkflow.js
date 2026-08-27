@@ -85,9 +85,14 @@ export function useAlertWorkflow(data) {
     [derived, states],
   );
 
+  // "normal" (all-clear) entries are informational, not actionable, so they
+  // never contribute to the bell badge.
   const counts = useMemo(() => {
     const c = { active: 0, acknowledged: 0, resolved: 0 };
-    for (const a of alerts) c[a.state] += 1;
+    for (const a of alerts) {
+      if (a.severity === "normal") continue;
+      c[a.state] += 1;
+    }
     return c;
   }, [alerts]);
 
