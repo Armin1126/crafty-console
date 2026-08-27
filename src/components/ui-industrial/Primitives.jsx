@@ -82,8 +82,8 @@ export function KeyButton({ active = false, accent = false, className = "", chil
         accent
           ? {
               boxShadow: active
-                ? "inset 6px 6px 12px rgba(150,30,40,0.6), inset -6px -6px 12px rgba(255,140,150,0.5)"
-                : "8px 8px 16px rgba(255,71,87,0.35), -8px -8px 16px #ffffff",
+                ? "inset 6px 6px 12px rgba(150,30,40,0.6), inset -6px -6px 12px rgba(255,140,150,0.25)"
+                : "8px 8px 16px rgba(255,71,87,0.28), -8px -8px 16px var(--color-edge-highlight)",
             }
           : undefined
       }
