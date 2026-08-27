@@ -149,19 +149,19 @@
    =========================================================== */
 
 @theme {
-  --color-chassis: #e0e5ec;
-  --color-panel: #f0f2f5;
-  --color-recessed: #d1d9e6;
-  --color-ink: #2d3436;
-  --color-ink-muted: #4a5568;
+  --color-chassis: #161a21;
+  --color-panel: #1e242e;
+  --color-recessed: #12161c;
+  --color-ink: #e8eef7;
+  --color-ink-muted: #9aa9bd;
   --color-accent: #ff4757;
   --color-accent-foreground: #ffffff;
-  --color-edge-shadow: #babecc;
-  --color-edge-highlight: #ffffff;
-  --color-edge-dark: #a3b1c6;
-  --color-tech: #2d3436;
-  --color-tech-alt: #2c3e50;
-  --color-tech-dim: #a8b2d1;
+  --color-edge-shadow: #0a0d12;
+  --color-edge-highlight: #2c3542;
+  --color-edge-dark: #0a0d12;
+  --color-tech: #0d1117;
+  --color-tech-alt: #131a23;
+  --color-tech-dim: #6b7a90;
   --color-ok: #22c55e;
   --color-warn: #f59e0b;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -170,28 +170,28 @@
 }
 
 @utility shadow-card {
-  box-shadow: 8px 8px 16px #babecc, -8px -8px 16px #ffffff;
+  box-shadow: 8px 8px 16px var(--color-edge-shadow), -8px -8px 16px var(--color-edge-highlight);
 }
 
 @utility shadow-floating {
   box-shadow:
-    12px 12px 24px #babecc,
-    -12px -12px 24px #ffffff,
-    inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    12px 12px 24px var(--color-edge-shadow),
+    -12px -12px 24px var(--color-edge-highlight),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 @utility shadow-pressed {
-  box-shadow: inset 6px 6px 12px #babecc, inset -6px -6px 12px #ffffff;
+  box-shadow: inset 6px 6px 12px var(--color-edge-shadow), inset -6px -6px 12px var(--color-edge-highlight);
 }
 
 @utility shadow-recessed {
-  box-shadow: inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff;
+  box-shadow: inset 4px 4px 8px var(--color-edge-shadow), inset -4px -4px 8px var(--color-edge-highlight);
 }
 
 @utility press {
   transition: all 200ms var(--ease-mech);
   &:active {
-    box-shadow: inset 6px 6px 12px #babecc, inset -6px -6px 12px #ffffff;
+    box-shadow: inset 6px 6px 12px var(--color-edge-shadow), inset -6px -6px 12px var(--color-edge-highlight);
     transform: translateY(2px);
   }
 }
@@ -201,9 +201,9 @@
   &:hover {
     transform: translateY(-0.25rem);
     box-shadow:
-      12px 12px 24px #babecc,
-      -12px -12px 24px #ffffff,
-      inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+      12px 12px 24px var(--color-edge-shadow),
+      -12px -12px 24px var(--color-edge-highlight),
+      inset 1px 1px 0 rgba(255, 255, 255, 0.06);
   }
 }
 
@@ -224,8 +224,8 @@
     height: 7px;
     border-radius: 9999px;
     top: 12px;
-    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #b9c0cc 60%, #93a0b5 100%);
-    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.9), 1px 1px 2px #babecc;
+    background: radial-gradient(circle at 30% 30%, #3b4553 0%, #232a35 60%, #12161c 100%);
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.12), 1px 1px 2px var(--color-edge-shadow);
   }
   &::before {
     left: 12px;
@@ -244,8 +244,8 @@
     pointer-events: none;
     background: repeating-linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px,
       transparent 4px
     );
