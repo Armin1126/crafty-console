@@ -9,7 +9,6 @@ import { Charts } from "./Charts.jsx";
 import { TreatmentPipeline } from "./TreatmentPipeline.jsx";
 import { Verification } from "./Verification.jsx";
 import { Energy } from "./Energy.jsx";
-import { Alerts } from "./Alerts.jsx";
 import { KeyButton, Stamp } from "../ui-industrial/Primitives.jsx";
 
 const LABELS = {
@@ -21,6 +20,7 @@ const LABELS = {
 
 export function Dashboard() {
   const { data, history, secondsAgo, scenario, setScenario } = useSensorData();
+  const alertWorkflow = useAlertWorkflow(data);
 
   return (
     <div className="min-h-screen bg-chassis lg:flex">
