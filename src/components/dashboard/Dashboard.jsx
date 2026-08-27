@@ -27,7 +27,11 @@ export function Dashboard() {
       <Sidebar />
       <main className="min-w-0 flex-1 px-4 pb-16 pt-4 sm:px-8 lg:pt-8">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-16 lg:gap-24">
-          <TopBar deviceId={data?.deviceId ?? "UNIT-001"} secondsAgo={secondsAgo} />
+<TopBar
+            deviceId={data?.deviceId ?? "UNIT-001"}
+            secondsAgo={secondsAgo}
+            alertWorkflow={alertWorkflow}
+          />
 
           <div className="-mt-10 flex flex-wrap items-center gap-3 rounded-xl bg-chassis px-4 py-3 shadow-recessed lg:-mt-16">
             <Stamp className="text-[0.55rem]">
@@ -55,7 +59,6 @@ export function Dashboard() {
               <TreatmentPipeline data={data} />
               <Verification data={data} />
               <Energy data={data} />
-              <Alerts data={data} />
             </>
           ) : (
             <p className="stamp text-xs">Initialising sensor array…</p>
