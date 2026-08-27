@@ -1,4 +1,5 @@
 import { useSensorData } from "../../hooks/useSensorData.js";
+import { useAlertWorkflow } from "../../hooks/useAlertWorkflow.js";
 import { SCENARIOS } from "../../types/sensor.js";
 import { Sidebar } from "./Sidebar.jsx";
 import { TopBar } from "./TopBar.jsx";
